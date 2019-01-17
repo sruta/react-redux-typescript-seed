@@ -1,0 +1,65 @@
+{
+  "name": "react-redux-typescript-seed",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "animate.css": "^3.7.0",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.2.1",
+    "react": "^16.7.0",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts-ts": "^4.0.8",
+    "reactstrap": "^7.0.2",
+    "redux": "^4.0.1",
+    "redux-form": "^8.1.0",
+    "reset-css": "^4.0.1"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "NODE_PATH=src/ react-scripts-ts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && NODE_PATH=src/ react-scripts-ts build",
+    "test": "NODE_PATH=src/ react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "lint": "./node_modules/.bin/eslint --max-warnings 1 ./src/*.tsx",
+    "prettier": "prettier --write \"./src/**/*.{js,jsx,tsx,json}\""
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-redux": "^7.0.0",
+    "@types/react-router": "^4.4.3",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/reactstrap": "^6.4.4",
+    "ghooks": "^2.0.4",
+    "node-sass": "^4.11.0",
+    "node-sass-chokidar": "^1.3.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.3",
+    "typescript": "^3.2.2"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "config": {
+    "ghooks": {
+      "pre-committ": "npm run lint",
+      "pre-pushh": "npm test"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "printWidth": 80
+  }
+}
